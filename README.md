@@ -18,27 +18,27 @@ Crack the password of a protected PDF file (`My Locked PDF1.pdf`) using two diff
 
 Run inside a **Kali Linux VM** (VirtualBox, NATNetwork 10.0.0.2/24) using John the Ripper and its Johnny GUI front-end, installed via:
 
-\`\`\`bash
+```bash
 sudo apt update
 sudo apt install johnny john
-\`\`\`
+```
 
 ### Steps
 
 1. Downloaded `My Locked PDF1.pdf` directly inside the Kali VM (via Kali's own browser, avoiding host-to-VM transfer issues).
 2. Located John's PDF hash extraction script:
 
-   \`\`\`bash
+   ```bash
    locate pdf2john.pl
    # /usr/share/john/pdf2john.pl
-   \`\`\`
+   ```
 
 3. Extracted the hash from the PDF:
 
-   \`\`\`bash
+   ```bash
    perl /usr/share/john/pdf2john.pl ~/Downloads/"My Locked PDF1.pdf" > ~/hash1.txt
    cat ~/hash1.txt
-   \`\`\`
+   ```
 
    Output confirmed a valid hash starting with `$pdf$`:
 
@@ -60,9 +60,9 @@ sudo apt install johnny john
 
 9. Lab completed — flag captured:
 
-   \`\`\`
+   ```
    nw{cybersecurity_flag_captured_2608}
-   \`\`\`
+   ```
 
    ![Flag captured confirmation](05-johncompleted1.png)
 
@@ -91,9 +91,9 @@ No installation required — runs entirely in the browser.
 
 7. Lab completed — flag captured:
 
-   \`\`\`
+   ```
    nw{networkwalks_flag1_jtr_270521_1}
-   \`\`\`
+   ```
 
    ![Flag captured confirmation](09-nwpasscrack2.png)
 
